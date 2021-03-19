@@ -2,7 +2,7 @@ import './Menu.css';
 
 const Menu = () => {
   return (
-    <aside class="Aside">
+    <aside className="Aside">
        <ul>
            <li className="listItem"><a href="#">Going to 1</a></li>
            <li className="listItem"><a href="#">Going to 2</a></li>

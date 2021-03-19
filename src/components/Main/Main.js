@@ -2,51 +2,25 @@ import './Main.css';
 import './Post.css';
 import './Posts.css';
 
-const Main = () => {
+const Main = ({
+    posts
+}) => {
   return (
-    <main class="Main">
+    <main className="Main">
         <h1>Sooooooooome Heading</h1>
-        <div class="Posts">
-            <div class="Post">
-                <img src="blue-origami-bird.png" alt=""/>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda architecto necessitatibus, illum, laboriosam, unde culpa in alias repellendus molestiae omnis deserunt sint corporis ipsa iure obcaecati vitae similique doloremque eum hic provident enim inventore magnam quam. Esse quo illum rem veniam maxime culpa dolorem nisi, id nulla fugit earum consectetur molestiae expedita doloremque dolor itaque quae, ea iure dolore adipisci saepe non! Fuga, corporis! Ab quidem, facere dolores dolore quia est unde doloribus ullam, at fugit obcaecati. Repellat reprehenderit voluptate animi temporibus voluptas omnis quae consectetur, perferendis suscipit recusandae, provident asperiores debitis nam aperiam sint itaque quod possimus expedita. Dolore.</p>
-                <div>
-                    <span>
-                        <small>Author:</small>
-                        Some Anonymous
+        <div className="Posts">
+            {posts.map(x =>
+                <div key={x.id + 1} className="Post">
+                <img key={x.id + 2} src="blue-origami-bird.png" alt=""/>
+                <p key={x.id + 3} className="description">{x.content}</p>
+                <div key={x.id + 4}>
+                    <span key={x.id + 5}>
+                        <small key={x.id+6}>Author:</small>
+                        {x.author}
                     </span>
                 </div>
             </div>
-            <div class="Post">
-                <img src="blue-origami-bird.png" alt=""/>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda architecto necessitatibus, illum, laboriosam, unde culpa in alias repellendus molestiae omnis deserunt sint corporis ipsa iure obcaecati vitae similique doloremque eum hic provident enim inventore magnam quam. Esse quo illum rem veniam maxime culpa dolorem nisi, id nulla fugit earum consectetur molestiae expedita doloremque dolor itaque quae, ea iure dolore adipisci saepe non! Fuga, corporis! Ab quidem, facere dolores dolore quia est unde doloribus ullam, at fugit obcaecati. Repellat reprehenderit voluptate animi temporibus voluptas omnis quae consectetur, perferendis suscipit recusandae, provident asperiores debitis nam aperiam sint itaque quod possimus expedita. Dolore.</p>
-                <div>
-                    <span>
-                        <small>Author:</small>
-                        Some Anonymous
-                    </span>
-                </div>
-            </div>
-            <div class="Post">
-                <img src="blue-origami-bird.png" alt=""/>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda architecto necessitatibus, illum, laboriosam, unde culpa in alias repellendus molestiae omnis deserunt sint corporis ipsa iure obcaecati vitae similique doloremque eum hic provident enim inventore magnam quam. Esse quo illum rem veniam maxime culpa dolorem nisi, id nulla fugit earum consectetur molestiae expedita doloremque dolor itaque quae, ea iure dolore adipisci saepe non! Fuga, corporis! Ab quidem, facere dolores dolore quia est unde doloribus ullam, at fugit obcaecati. Repellat reprehenderit voluptate animi temporibus voluptas omnis quae consectetur, perferendis suscipit recusandae, provident asperiores debitis nam aperiam sint itaque quod possimus expedita. Dolore.</p>
-                <div>
-                    <span>
-                        <small>Author:</small>
-                        Some Anonymous
-                    </span>
-                </div>
-            </div>
-            <div class="Post">
-                <img src="blue-origami-bird.png" alt=""/>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda architecto necessitatibus, illum, laboriosam, unde culpa in alias repellendus molestiae omnis deserunt sint corporis ipsa iure obcaecati vitae similique doloremque eum hic provident enim inventore magnam quam. Esse quo illum rem veniam maxime culpa dolorem nisi, id nulla fugit earum consectetur molestiae expedita doloremque dolor itaque quae, ea iure dolore adipisci saepe non! Fuga, corporis! Ab quidem, facere dolores dolore quia est unde doloribus ullam, at fugit obcaecati. Repellat reprehenderit voluptate animi temporibus voluptas omnis quae consectetur, perferendis suscipit recusandae, provident asperiores debitis nam aperiam sint itaque quod possimus expedita. Dolore.</p>
-                <div>
-                    <span>
-                        <small>Author:</small>
-                        Some Anonymous
-                    </span>
-                </div>
-            </div>
+            )}
         </div>
     </main>
   );

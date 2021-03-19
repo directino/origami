@@ -2,7 +2,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer class="Footer">
+    <footer className="Footer">
        <ul>
            <li className="listItem"><a href="#">Going to 1</a></li>
            <li className="listItem"><a href="#">Going to 2</a></li>

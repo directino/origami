@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import * as postService from './services/postServices';
 import './App.css';
 import './Navigation.css';
 import './Container.css';
@@ -21,13 +22,28 @@ import Footer from './components/Footer/Footer';
 // }
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      posts: []
+    }
+  }
+
+  componentDidMount() {
+    postService.getAll()
+      .then(posts => {
+        this.setState({posts})
+      })
+  }
+
   render() {
     return (
-      <div class="App">
+      <div className="App">
         <Header/>
-        <div class="Container">
+        <div className="Container">
         <Menu/>
-        <Main/>
+        <Main posts={this.state.posts} />
         </div> 
         <Footer/>
       </div>
